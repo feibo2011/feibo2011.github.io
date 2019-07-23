@@ -1,4 +1,176 @@
-linux
+# linux与mac
+
+```
+
+linux&macos命令行：主要在苹果机下面执行的 。
+
+
+
+service sshd start							 开启服务
+
+ ping 192.168.137.103 						查ip的延迟。
+
+ ssh -p22 xyl@192.168.137.103  用ssh服务端控制客户端
+终止目录 control +c 控制
+				ctrl+c
+
+```
+
+
+
+
+
+### 读写执行权限:
+
+```
+r（read）读
+
+w（write）写
+
+x	执行exe（execute）  --运行文件
+```
+
+
+
+
+
+### 权限：
+
+```
+所有者（u）root：只能有一个，也可以换成他人(rw读写权限)
+
+所属组(g)root：我授权（只有读的权限）
+
+其他人（0）other：不能碰
+
+文件所属者->文件所属组-> 文件的修改时间->文件名
+```
+
+
+
+
+
+### 文件类型（用ls -l查出的含义）
+
+```
+-二进制文件 r
+
+d目录
+
+l软链接文件
+```
+
+
+
+
+
+### 1目录处理命令：ls
+
+```
+执行权限为所有用户
+ls -l（lang）		详细信息显示
+ls -a 	（add）	查看隐藏
+ls  -d （ document）查看目录属性
+ls -h (help)人性化的查找,配合-l -hl（-lh） 显示文件大小
+
+
+ls -i		19714802 404.html
+ls -r		tags.htmlls
+
+通配符的使用：
+*			任意个数个字符	
+
+?			一个字符，至少一个
+[]		表示匹配其中任意一个
+[abc] 匹配a,b,c中
+[a-f] 匹配从a到f内
+```
+
+### 1.2目录处理命令：mkdir
+
+```
+make directiries	做目录
+mkdir -p [目录名]  创建新目录，-p递归创建
+
+	mkdir 1								可以
+ mkdir -p sad/2 				可以
+ mkdir -p ddsd1/d32d2/d 可以
+  mkdir  1/2/d  1/2/c 前提 1/2 存在
+ 
+ mkdir -p /ddsd1/d32d2/d 不可以
+ 
+ mkdir /1/2/3 删除空目录
+```
+
+### 1.3目录处理命令：pwd
+
+（显示当前目录Print Working Directory）
+
+### 1.4目录处理命令：cp
+
+```
+copy 拷贝（复制文件或者目录）
+
+cp -rp[原文件或者目录][目标目录]
+	-r	复制目录
+	-p 保留文件属性（很不错）（拷贝）
+cp /Users/ti/Desktop/今日收获.md   /Users/ti/Desktop/lianxi\js.md
+就会出现lianxijs.md 
+
+
+```
+
+### 1.5目录处理命令：mv
+
+```
+mv move [原文件的绝对路径][目标路径] 剪切文件 改名
+mv /tmp/ja/longze /root/ns  					两个名字不同就是改名
+
+```
+
+
+
+
+
+### 1.6目录处理命令：r m
+
+```
+remove 删除(搬家)
+-rf [文件或目录]  
+-r 是删除目录  -f 是强制执行 （false)
+
+例子： rm /tmp/
+rm 	/Users/tianzi/Desktop/lianxijs.md  				成功
+rm -rf 	/Users/tianzi/Desktop/lianxi\ /d2dsd1 	成功
+```
+
+
+
+### 2文件处理命令：touch（创建空文件）
+
+```
+touch 'sd sd'  创建一个sd sd的文件。 但是对他查找一定要‘' 。
+ 
+```
+
+### 计算机中文件大小的表示（科普）
+
+
+
+|单位|含义|
+| -      | -    |
+| 字节B（Byte） | 在计算机中作为一个数字单位，一般为8位二进制数 |
+| 千Kibi-byte | 1k，千字节 |
+| 兆Mebi-byte | 1m，百万字节 |
+| 千兆Giga- | 1g，千兆字节 |
+| 太T | |
+| 拍P |      |
+| 艾E |  |
+| 泽Z |  |
+| 尧Y | 一亿亿字节 |
+|||
+
+​    
 
 
 
@@ -95,6 +267,7 @@ Config 			配置
 command not found 					命令未找到
 
 no such file or directory  	没有这样的文件或目录
+
 ```
 
 
@@ -161,7 +334,7 @@ Linux 必须通过挂在之后使用 （是所有的存储设备）
 
 
 
-### linux目录的：
+### linux目录
 
 （严谨的系统）
 
@@ -180,8 +353,7 @@ etc 配置文件保存位置
 media 媒体设备   ； mnt u盘；  misc nfs服务；这三个都是挂载目录
 
 var 动态保存目录，日志，邮件
-
-
+usr: 不是user，是Uinx Software Resource=Unix系统软件资源目录，占用的内存目录
 
 
 ```
